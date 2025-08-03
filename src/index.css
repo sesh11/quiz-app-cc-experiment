@@ -1,1 +1,58 @@
 @import url(../node_modules/semantic-ui-css/semantic.min.css);
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #1b1c1d;
+  --header-background: #1b1c1d;
+  --header-text: #ffffff;
+  --card-background: #ffffff;
+  --border-color: rgba(34,36,38,.15);
+  --shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --header-background: #2a2a2a;
+  --header-text: #ffffff;
+  --card-background: #2a2a2a;
+  --border-color: rgba(255,255,255,.15);
+  --shadow: 0 1px 3px 0 rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.1);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ui.inverted.menu {
+  background: var(--header-background);
+}
+
+.ui.card,
+.ui.cards > .card {
+  background: var(--card-background);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+.ui.segment {
+  background: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.ui.button {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .ui.button:not(.primary):not(.secondary):not(.positive):not(.negative):not(.teal) {
+  background: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .ui.button:not(.primary):not(.secondary):not(.positive):not(.negative):not(.teal):hover {
+  background: rgba(255,255,255,0.1);
+}
